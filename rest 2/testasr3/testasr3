@@ -1,0 +1,48 @@
+*
+
+.subckt testa2
+
+
+R7 Net-_U2A-A_ Net-_U1A-G_ R_Small
+R8 Net-_U1A-G_ Net-_U1B-G_ R_Small
+C2 Net-_C10-Pad1_ Net-_C2-Pad2_ 477p
+R6 Net-_U1A-K_ Net-_C10-Pad1_ R_Small
+U1 __U1
+R12 Net-_R12-Pad1_ Net-_U4A-K_G3_ R_Small
+U4 __U4
+U3 __U3
+R13 Net-_U3A-K_G3_ Net-_R12-Pad1_ R_Small
+R14 Net-_U3A-G2_ unconnected-_R14-Pad2_ R_Small
+C7 unconnected-_C7-Pad1_ unconnected-_C7-Pad2_ 477p
+T1 __T1
+R11 unconnected-_R11-Pad1_ Net-_U4A-G2_ R_Small
+C6 unconnected-_C6-Pad1_ unconnected-_C6-Pad2_ 477p
+R3 Net-_C1-Pad2_ Net-_C10-Pad1_ 1000k
+R9 Net-_U2A-G1_ Net-_C10-Pad1_ R_Small
+R4 Net-_R1-Pad2_ Net-_C10-Pad1_ R_Small
+C1 unconnected-_C1-Pad1_ Net-_C1-Pad2_ 477p
+R2 Net-_U2A-G1_ Net-_C1-Pad2_ 4.7k
+D1 __D1
+R5 Net-_C2-Pad2_ Net-_U2A-A_ R_Small
+R1 Net-_U2A-G3_ Net-_R1-Pad2_ R_Small
+U2 __U2
+R20 Net-_U1A-A_ Net-_R20-Pad2_ R_Small
+C3 Net-_C10-Pad1_ Net-_U1B-G_ 477p
+C11 Net-_C10-Pad1_ Net-_C11-Pad2_ 477p
+R21 Net-_R21-Pad1_ Net-_U1B-A_ R_Small
+RV1 __RV1
+C8 Net-_U1B-A_ Net-_C8-Pad2_ 477p
+RV3 __RV3
+R15 Net-_C8-Pad2_ Net-_U4A-G1_ R_Small
+R19 Net-_C10-Pad2_ Net-_C8-Pad2_ R_Small
+C5 Net-_C10-Pad1_ Net-_T1-PM_ 477p
+R10 Net-_C4-Pad2_ Net-_U3A-G1_ R_Small
+R18 Net-_C4-Pad2_ Net-_C9-Pad2_ R_Small
+R16 Net-_C9-Pad2_ Net-_R12-Pad1_ R_Small
+C10 Net-_C10-Pad1_ Net-_C10-Pad2_ 477p
+R17 Net-_C10-Pad2_ Net-_R12-Pad1_ R_Small
+C9 Net-_C10-Pad1_ Net-_C9-Pad2_ 477p
+C4 Net-_U1A-A_ Net-_C4-Pad2_ 477p
+RV2 __RV2
+
+.ends

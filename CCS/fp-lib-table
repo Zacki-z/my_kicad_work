@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Connector_Wire")(type "KiCad")(uri "/home/alain/kicad stuff/footprints/kicad-footprints-master/Connector_Wire.pretty")(options "")(descr ""))
+)

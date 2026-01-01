@@ -1,0 +1,144 @@
+
+EESchema Schematic File Version 4
+LIBS:tubes
+LIBS:regulators
+LIBS:transformers
+LIBS:passives
+LIBS:power
+
+$Comp
+L Tube:6SN7 V1
+U 1 1 61A8A001
+P 3500 2800
+F 0 "V1" H 3550 3000 50  0000 L CNN
+F 1 "6SN7" H 3550 2700 50  0000 L CNN
+	1    3500 2800
+$EndComp
+
+$Comp
+L Tube:KT88 V2
+U 1 1 61A8A002
+P 4500 2800
+F 0 "V2" H 4550 3000 50  0000 L CNN
+F 1 "KT88" H 4550 2700 50  0000 L CNN
+	1    4500 2800
+$EndComp
+
+$Comp
+L Tube:KT88 V3
+U 1 1 61A8A003
+P 5500 2800
+F 0 "V3" H 5550 3000 50  0000 L CNN
+F 1 "KT88" H 5550 2700 50  0000 L CNN
+	1    5500 2800
+$EndComp
+
+$Comp
+L Regulator_Linear:LM317 U1
+U 1 1 61A8A004
+P 4200 3800
+F 0 "U1" H 4250 4000 50  0000 L CNN
+F 1 "LM317" H 4250 3700 50  0000 L CNN
+	1    4200 3800
+$EndComp
+
+$Comp
+L Regulator_Linear:LM317 U2
+U 1 1 61A8A005
+P 5200 3800
+F 0 "U2" H 5250 4000 50  0000 L CNN
+F 1 "LM317" H 5250 3700 50  0000 L CNN
+	1    5200 3800
+$EndComp
+
+$Comp
+L Device:R Rbias1
+U 1 1 61A8A006
+P 4200 4300
+F 0 "Rbias1" V 4280 4300 50  0000 C CNN
+F 1 "16.7Ω" V 4120 4300 50  0000 C CNN
+	1    4200 4300
+$EndComp
+
+$Comp
+L Device:R Rbias2
+U 1 1 61A8A007
+P 5200 4300
+F 0 "Rbias2" V 5280 4300 50  0000 C CNN
+F 1 "16.7Ω" V 5120 4300 50  0000 C CNN
+	1    5200 4300
+$EndComp
+
+$Comp
+L Transformer:PushPull_Transformer T1
+U 1 1 61A8A008
+P 6000 2800
+F 0 "T1" H 6000 3050 50  0000 C CNN
+F 1 "Hammond 1650N" H 6000 2550 50  0000 C CNN
+	1    6000 2800
+$EndComp
+
+$Comp
+L Device:R Rload
+U 1 1 61A8A009
+P 6500 3300
+F 0 "Rload" V 6580 3300 50  0000 C CNN
+F 1 "8Ω" V 6420 3300 50  0000 C CNN
+	1    6500 3300
+$EndComp
+
+$Comp
+L Device:R Rschade1
+U 1 1 61A8A010
+P 4400 2600
+F 0 "Rschade1" V 4480 2600 50  0000 C CNN
+F 1 "47kΩ" V 4320 2600 50  0000 C CNN
+	1    4400 2600
+$EndComp
+
+$Comp
+L Device:R Rschade2
+U 1 1 61A8A011
+P 5400 2600
+F 0 "Rschade2" V 5480 2600 50  0000 C CNN
+F 1 "47kΩ" V 5320 2600 50  0000 C CNN
+	1    5400 2600
+$EndComp
+
+$Comp
+L Device:R Rzobel
+U 1 1 61A8A012
+P 6300 3600
+F 0 "Rzobel" V 6380 3600 50  0000 C CNN
+F 1 "10Ω" V 6220 3600 50  0000 C CNN
+	1    6300 3600
+$EndComp
+
+$Comp
+L Device:C Czobel
+U 1 1 61A8A013
+P 6300 4000
+F 0 "Czobel" H 6400 4000 50  0000 L CNN
+F 1 "0.1uF" H 6400 3900 50  0000 L CNN
+	1    6300 4000
+$EndComp
+
+$Comp
+L power:VDC Vdriver
+U 1 1 61A8A014
+P 3000 3300
+F 0 "Vdriver" H 3000 3550 50  0000 C CNN
+F 1 "300V" H 3000 3250 50  0000 C CNN
+	1    3000 3300
+$EndComp
+
+$Comp
+L power:VDC Voutput
+U 1 1 61A8A015
+P 3000 3800
+F 0 "Voutput" H 3000 4050 50  0000 C CNN
+F 1 "450V" H 3000 3750 50  0000 C CNN
+	1    3000 3800
+$EndComp
+
+$EndEESchema

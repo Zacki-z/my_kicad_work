@@ -1,0 +1,5 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"D1";"LED_D3.0mm_Clear";1;"LED";;;
+2;"SW1";"SW_PUSH_6mm_H8.5mm";1;"SW_Push";;;
+3;"R1";"R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal";1;"330 ohm";;;
+4;"A1";"Arduino_Nano";1;"Arduino_Nano_v3.x";;;

@@ -1,0 +1,71 @@
+
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Tube_Library
+LIBS:custom_components
+
+EELAYER 26 0
+EELAYER END
+
+$Comp
+L Tube_Library:ECC83 V1
+U 1 1 60A1E5C1
+P 1000 1000
+F 0 "V1" H 1100 1050 50  0000 L CNN
+F 1 "ECC83" H 1100 950 50  0000 L CNN
+F 2 "Tube_Noval" H 1000 1000 50  0001 C CNN
+F 3 "" H 1000 1000 50  0001 C CNN
+	1    1000 1000
+	1    0    0    -1  
+$EndComp
+
+$Comp
+L Tube_Library:KT77 V3
+U 1 1 60A1E5D2
+P 2000 1000
+F 0 "V3" H 2100 1050 50  0000 L CNN
+F 1 "KT77" H 2100 950 50  0000 L CNN
+F 2 "Tube_Octal" H 2000 1000 50  0001 C CNN
+F 3 "" H 2000 1000 50  0001 C CNN
+	1    2000 1000
+	1    0    0    -1  
+$EndComp
+
+$Comp
+L Resistor:R R1
+U 1 1 60A1E5E1
+P 1200 800
+F 0 "R1" V 1250 800 50  0000 C CNN
+F 1 "1M" V 1150 800 50  0000 C CNN
+F 2 "Resistor_Axial" H 1200 800 50  0001 C CNN
+F 3 "" H 1200 800 50  0001 C CNN
+	1    1200 800
+	1    0    0    -1  
+$EndComp
+
+$Comp
+L Resistor:R R2
+U 1 1 60A1E5F1
+P 1400 800
+F 0 "R2" V 1450 800 50  0000 C CNN
+F 1 "1M" V 1350 800 50  0000 C CNN
+F 2 "Resistor_Axial" H 1400 800 50  0001 C CNN
+F 3 "" H 1400 800 50  0001 C CNN
+	1    1400 800
+	1    0    0    -1  
+$EndComp
+
+$Comp
+L Power:+400V #PWR01
+U 1 1 60A1E601
+P 1200 600
+F 0 "#PWR01" H 1200 450 50  0001 C CNN
+F 1 "+400V" H 1200 750 50  0000 C CNN
+F 2 "" H 1200 600 50  0001 C CNN
+F 3 "" H 1200 600 50  0001 C CNN
+	1    1200 600
+	1    0    0    -1  
+$EndComp
+
+$EndSCHEMATC

@@ -1,0 +1,58 @@
+** Drc report for CCS.kicad_pcb **
+** Created on 2025-08-31T17:47:15+0200 **
+
+** Found 13 DRC violations **
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(70.0000 mm, 62.5000 mm): Track [Earth] on B.Cu, length 2.5345 mm
+[via_dangling]: Via is not connected or connected on only one layer
+    Local override; warning
+    @(70.0000 mm, 62.5000 mm): Via [Earth] on F.Cu - B.Cu
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(75.0000 mm, 62.5000 mm): Track [+280] on B.Cu, length 2.5345 mm
+[holes_co_located]: Drilled holes co-located
+    Local override; warning
+    @(75.0000 mm, 62.5000 mm): Via [+280] on F.Cu - B.Cu
+    @(75.0000 mm, 62.5000 mm): Via [+280] on F.Cu - B.Cu
+[holes_co_located]: Drilled holes co-located
+    Local override; warning
+    @(69.3500 mm, 50.3800 mm): Via [Earth] on F.Cu - B.Cu
+    @(69.3500 mm, 50.3800 mm): Via [Earth] on F.Cu - B.Cu
+[holes_co_located]: Drilled holes co-located
+    Local override; warning
+    @(69.3500 mm, 50.3800 mm): Via [Earth] on F.Cu - B.Cu
+    @(69.3500 mm, 50.3800 mm): PTH pad 2 [Earth] of R9
+[holes_co_located]: Drilled holes co-located
+    Local override; warning
+    @(69.3500 mm, 50.3800 mm): Via [Earth] on F.Cu - B.Cu
+    @(69.3500 mm, 50.3800 mm): PTH pad 2 [Earth] of R9
+[holes_co_located]: Drilled holes co-located
+    Local override; warning
+    @(69.3500 mm, 50.3800 mm): Via [Earth] on F.Cu - B.Cu
+    @(69.3500 mm, 50.3800 mm): PTH pad 2 [Earth] of R9
+[holes_co_located]: Drilled holes co-located
+    Local override; warning
+    @(69.3500 mm, 50.3800 mm): Via [Earth] on F.Cu - B.Cu
+    @(69.3500 mm, 50.3800 mm): PTH pad 2 [Earth] of R9
+[invalid_outline]: Board has malformed outline (no edges found on Edge.Cuts layer)
+    Local override; error
+    @(0.0000 mm, 0.0000 mm): PCB
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(64.2700 mm, 43.9600 mm): Reference field of R8
+    @(61.0000 mm, 43.6500 mm): Segment of R3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(64.2700 mm, 48.0100 mm): Reference field of R9
+    @(61.0000 mm, 47.7000 mm): Segment of R8 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(64.2700 mm, 52.0600 mm): Reference field of R10
+    @(61.0000 mm, 51.7500 mm): Segment of R9 on F.Silkscreen
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **
