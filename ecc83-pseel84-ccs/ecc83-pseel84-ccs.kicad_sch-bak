@@ -3485,16 +3485,16 @@
 		(uuid "49f0643d-706f-4df8-a605-ea35d6b9afc8")
 	)
 	(junction
+		(at 168.91 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "558ff6cd-6688-4c4c-a965-1a6a53938654")
+	)
+	(junction
 		(at 217.17 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5dd16d82-11af-4206-b6b8-46ff8e4e6550")
-	)
-	(junction
-		(at 176.53 142.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "642443d6-cc6f-494a-95a5-0ff3ec0e0eb5")
 	)
 	(junction
 		(at 64.77 110.49)
@@ -3537,6 +3537,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "82581ee4-8605-4143-ac34-75d75063c378")
+	)
+	(junction
+		(at 157.48 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f866679-868d-43dd-8715-d163d4ac2559")
 	)
 	(junction
 		(at 107.95 157.48)
@@ -3587,6 +3593,12 @@
 		(uuid "d60315c8-bc5d-4498-9e55-16d560cc6e8a")
 	)
 	(junction
+		(at 168.91 125.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "da127205-efd9-4c5d-a143-b74b1e0c0f8c")
+	)
+	(junction
 		(at 137.16 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3605,16 +3617,16 @@
 		(uuid "e9644e17-45b4-4a01-a081-090c962f9268")
 	)
 	(junction
-		(at 176.53 129.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e974201f-aa94-4fe2-96ff-4888b5d8d85c")
-	)
-	(junction
 		(at 186.69 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ebd41474-ad9a-48fc-a392-7f72dde8c983")
+	)
+	(junction
+		(at 168.91 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "edec4415-6174-4ed5-b41b-abd865e3ddae")
 	)
 	(junction
 		(at 64.77 114.3)
@@ -3728,7 +3740,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 142.24) (xy 176.53 142.24)
+			(xy 130.81 142.24) (xy 157.48 142.24)
 		)
 		(stroke
 			(width 0)
@@ -3745,6 +3757,16 @@
 			(type default)
 		)
 		(uuid "17fb4cbf-08e4-481c-9412-8e77256ea9c6")
+	)
+	(wire
+		(pts
+			(xy 168.91 135.89) (xy 168.91 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b8f0488-90c3-4c86-97c2-c48fa2ebe3d9")
 	)
 	(wire
 		(pts
@@ -3798,6 +3820,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 134.62) (xy 168.91 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2248c461-9c3d-4d1d-86b0-0626d2cc341a")
+	)
+	(wire
+		(pts
 			(xy 210.82 142.24) (xy 256.54 142.24)
 		)
 		(stroke
@@ -3808,17 +3840,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 142.24) (xy 186.69 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2ca486db-16a1-4eb4-add3-b8a938677bef")
-	)
-	(wire
-		(pts
-			(xy 176.53 116.84) (xy 176.53 129.54)
+			(xy 176.53 116.84) (xy 176.53 135.89)
 		)
 		(stroke
 			(width 0)
@@ -4005,6 +4027,16 @@
 			(type default)
 		)
 		(uuid "60371621-af81-4cd6-a78e-1aea338cebfa")
+	)
+	(wire
+		(pts
+			(xy 176.53 135.89) (xy 168.91 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6256f9fb-5fa4-4e4e-82ee-22f5f4452ac0")
 	)
 	(wire
 		(pts
@@ -4398,13 +4430,33 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 129.54) (xy 176.53 142.24)
+			(xy 157.48 135.89) (xy 157.48 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b796aadf-71b7-4094-b3a2-509d6c63feaf")
+		(uuid "b6343ad2-3b8b-4fa8-ac9e-530bdd7b5d74")
+	)
+	(wire
+		(pts
+			(xy 168.91 127) (xy 168.91 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8ae1a60-ccf0-4b11-8f2d-bc3b7ab70a4a")
+	)
+	(wire
+		(pts
+			(xy 157.48 142.24) (xy 168.91 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b98a3761-4778-484f-9134-a4d86920bbd2")
 	)
 	(wire
 		(pts
@@ -4438,6 +4490,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 125.73) (xy 168.91 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c065b675-aa18-4b9b-a5ca-0b87f5652165")
+	)
+	(wire
+		(pts
 			(xy 36.83 142.24) (xy 64.77 142.24)
 		)
 		(stroke
@@ -4465,16 +4527,6 @@
 			(type default)
 		)
 		(uuid "c5b94a1c-2c3e-4cbc-9c21-dbfbd486f151")
-	)
-	(wire
-		(pts
-			(xy 168.91 124.46) (xy 168.91 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c93b9089-a2c0-4333-b31a-5c0f81e69790")
 	)
 	(wire
 		(pts
@@ -4588,6 +4640,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 142.24) (xy 186.69 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd99b76e-26bf-424d-a51a-890ef0f5031d")
+	)
+	(wire
+		(pts
 			(xy 67.31 86.36) (xy 115.57 86.36)
 		)
 		(stroke
@@ -4615,6 +4677,16 @@
 			(type default)
 		)
 		(uuid "e8b87c66-2512-4f6c-b38c-2bdfade3851a")
+	)
+	(wire
+		(pts
+			(xy 157.48 128.27) (xy 157.48 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8e02963-ba20-4a44-add2-b33d671c5361")
 	)
 	(wire
 		(pts
@@ -4705,6 +4777,16 @@
 			(type default)
 		)
 		(uuid "fda364fa-ea13-4625-8ba4-3304b2ea32a8")
+	)
+	(wire
+		(pts
+			(xy 168.91 125.73) (xy 168.91 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff1ef299-00f1-48bf-a0a8-fa26c89484fd")
 	)
 	(wire
 		(pts
@@ -5674,15 +5756,15 @@
 	(symbol
 		(lib_id "Regulator_Linear:LM317_TO-220")
 		(at 168.91 116.84 90)
-		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "6643e75d-32ab-4eb0-9a49-90079e37ba09")
 		(property "Reference" "U2"
-			(at 165.1 118.1101 90)
+			(at 165.1 115.5699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5691,7 +5773,7 @@
 			)
 		)
 		(property "Value" "LM317_TO-220"
-			(at 165.1 115.5701 90)
+			(at 165.1 118.1099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6659,74 +6741,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_SL_Resistors:470ohm")
-		(at 172.72 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "af36097f-ca3e-4df5-a0f9-d7074399847a")
-		(property "Reference" "R12"
-			(at 172.72 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "36 ohm"
-			(at 172.72 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
-			(at 173.609 133.858 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 173.228 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "470Ω, 1/4W Resistor"
-			(at 172.72 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f990ba28-dd21-4bba-955f-db3d660c2867")
-		)
-		(pin "2"
-			(uuid "56128c6a-e987-46ca-9281-396c6ca340f8")
-		)
-		(instances
-			(project "ecc83-pseel84-ccs"
-				(path "/ede9bcd0-3b88-45ca-8857-ae16dd120ce1"
-					(reference "R12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:Earth")
 		(at 210.82 148.59 0)
 		(unit 1)
@@ -6997,6 +7011,146 @@
 			(project "ecc83-pseel84-ccs"
 				(path "/ede9bcd0-3b88-45ca-8857-ae16dd120ce1"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Capacitors:22uF_50V")
+		(at 157.48 132.08 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c4e26656-9427-43d3-b61a-ec442d9c535c")
+		(property "Reference" "C7"
+			(at 161.29 130.8099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "220 uF"
+			(at 161.29 133.3499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
+			(at 153.67 132.842 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 132.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "22uF, 50V Electrolytic Capacitor"
+			(at 157.48 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0ca593e6-52a7-4854-abc5-0c8c4517f50a")
+		)
+		(pin "1"
+			(uuid "0c78bbde-8187-46d4-8294-f9ee65b838f2")
+		)
+		(instances
+			(project "ecc83-pseel84-ccs"
+				(path "/ede9bcd0-3b88-45ca-8857-ae16dd120ce1"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Resistors:470ohm")
+		(at 168.91 130.81 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d0a9267a-8cbc-4c37-958a-201b421e5e3e")
+		(property "Reference" "R12"
+			(at 171.45 129.5399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "36 ohm"
+			(at 171.45 132.0799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 164.592 131.699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 168.91 131.318 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "470Ω, 1/4W Resistor"
+			(at 168.91 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6e704f0a-2344-4683-b000-4dd1c1573730")
+		)
+		(pin "2"
+			(uuid "a922e509-0c8e-484d-a527-d1455808dedc")
+		)
+		(instances
+			(project "ecc83-pseel84-ccs"
+				(path "/ede9bcd0-3b88-45ca-8857-ae16dd120ce1"
+					(reference "R12")
 					(unit 1)
 				)
 			)
