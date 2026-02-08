@@ -1,0 +1,15 @@
+
+# LibreOffice lock files
+.~lock.*#
+
+# KiCad autosave/lock/backup
+_autosave-*
+*-bak
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.zip
+*~*.lck
+~*.lck
+#auto_saved_files#
+*_backups/
+*-backups/
