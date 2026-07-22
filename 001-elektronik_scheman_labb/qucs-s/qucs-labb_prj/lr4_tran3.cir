@@ -1,0 +1,64 @@
+* Aktiv 2-vags LR4-delningsfilter - TRANSIENT (tidsdomän)
+* Visar steg-/stegrespons genom hogpass, lagpass och summan.
+* Ideala op-forstarkare. Kor interaktivt:  ngspice -> source lr4_tran.cir
+*
+* INSIGNAL: valj EN av Vin-raderna nedan.
+*  (A) STEG (fyrkantflank) - default. Stegrespons + ateruppbyggnad.
+*  (B) 80 Hz TONBURST - avkommentera, kommentera bort (A). Pamonad 80 Hz-ton.
+
+Vin in 0 PULSE(0 1 5m 20u 20u 80m 200m)        ; (A) steg vid t=5 ms
+* Vin in 0 SIN(0 1 80 5m)                        ; (B) 80 Hz tonburst fran t=5 ms
+
+.subckt opamp vp vn out
+Eop out 0 vp vn 1e6
+.ends
+
+R1    in   bp1   1k
+R2    bp1  0     100k
+XU1A  bp1  vbuf  vbuf  opamp
+
+* --- HOGPASS ---
+C1 vbuf nA1 100n
+C2 nA1 nB1 100n
+R3 nA1 hp1 19.9k
+R11 nB1 0 19.9k
+R4 hp1 ni1 5.9k
+R5 ni1 0 10k
+XU2A nB1 ni1 hp1 opamp
+C3 hp1 nA2 100n
+C4 nA2 nB2 100n
+R6 nA2 hp2 19.9k
+R12 nB2 0 19.9k
+R8 hp2 ni2 5.9k
+R7 ni2 0 10k
+XU2B nB2 ni2 hp2 opamp
+R9 hp2 hpd 15k
+R10 hpd 0 10k
+XU3A hpd hpo hpo opamp
+
+* --- LAGPASS ---
+R13 vbuf nA3 19.9k
+R14 nA3 nB3 19.9k
+C5 nA3 lp1 100n
+C6 nB3 0 100n
+R16 lp1 ni3 5.9k
+R15 ni3 0 10k
+XU4B nB3 ni3 lp1 opamp
+R19 lp1 nA4 19.9k
+R20 nA4 nB4 19.9k
+C7 nA4 lp2 100n
+C8 nB4 0 100n
+R18 lp2 ni4 5.9k
+R17 ni4 0 10k
+XU4A nB4 ni4 lp2 opamp
+R21 lp2 lpd 15k
+R22 lpd 0 10k
+XU3B lpd lpo lpo opamp
+
+.control
+tran 20u 50m
+let summ = v(hpo)+v(lpo)
+plot v(vbuf) v(lpo) v(hpo) summ title 'Stegrespons: insignal, LP, HP, summa'
+* for tonburst (B) anvand t.ex.:  tran 20u 60m  och samma plot
+.endc
+.end

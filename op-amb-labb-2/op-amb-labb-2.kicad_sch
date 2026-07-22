@@ -259,6 +259,113 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -1001,16 +1108,6 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 39.37) (xy 73.66 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05693284-9295-48a4-91b2-59ed9b00ec40")
-	)
-	(wire
-		(pts
 			(xy 110.49 88.9) (xy 125.73 88.9)
 		)
 		(stroke
@@ -1041,13 +1138,13 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 119.38) (xy 73.66 119.38)
+			(xy 58.42 119.38) (xy 73.66 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2765fec7-0800-4dc7-ae4b-3116a26bc88d")
+		(uuid "2ff9da46-0144-4ab8-b9c8-253f9f729a75")
 	)
 	(wire
 		(pts
@@ -1231,6 +1328,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 39.37) (xy 73.66 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "807c6497-48e9-4d6d-a351-0801cbf81d41")
+	)
+	(wire
+		(pts
 			(xy 106.68 91.44) (xy 106.68 39.37)
 		)
 		(stroke
@@ -1271,7 +1378,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 50.8) (xy 180.34 50.8)
+			(xy 168.91 50.8) (xy 182.88 50.8)
 		)
 		(stroke
 			(width 0)
@@ -1301,7 +1408,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 119.38) (xy 181.61 119.38)
+			(xy 168.91 119.38) (xy 184.15 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1381,7 +1488,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 39.37) (xy 180.34 39.37)
+			(xy 106.68 39.37) (xy 182.88 39.37)
 		)
 		(stroke
 			(width 0)
@@ -1430,6 +1537,73 @@
 		(uuid "f9c78baf-76d7-4a7c-8dfc-14507f3321f0")
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 58.42 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "24459ba1-d5af-403d-a547-572f21bf8498")
+		(property "Reference" "TP4"
+			(at 60.96 114.8079 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 60.96 117.3479 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Bridge_Pitch5.08mm_Drill0.7mm"
+			(at 63.5 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 58.42 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "57d3df63-d438-4acb-9947-4f8412321291")
+		)
+		(instances
+			(project ""
+				(path "/088da866-a385-4de1-a0c1-fe8c93d1621e"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Operational:LM358")
 		(at 144.78 50.8 0)
 		(unit 1)
@@ -1454,7 +1628,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:CERDIP-8_W7.62mm_SideBrazed"
 			(at 144.78 50.8 0)
 			(effects
 				(font
@@ -1542,7 +1716,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Vishay_148-149_Single_Vertical"
 			(at 73.66 77.47 0)
 			(effects
 				(font
@@ -1615,7 +1789,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Bridge_Pitch5.08mm_Drill0.7mm"
 			(at 83.82 91.44 90)
 			(effects
 				(font
@@ -1667,7 +1841,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "557964db-9a0f-4ffd-bd9e-343f5846d964")
-		(property "Reference" "Rg"
+		(property "Reference" "Rg1"
 			(at 137.16 72.3899 0)
 			(effects
 				(font
@@ -1676,7 +1850,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10 kohm"
 			(at 137.16 74.9299 0)
 			(effects
 				(font
@@ -1685,7 +1859,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0614_L14.3mm_D5.7mm_P15.24mm_Horizontal"
 			(at 136.398 73.66 90)
 			(effects
 				(font
@@ -1721,7 +1895,74 @@
 		(instances
 			(project "op-amb-labb-2"
 				(path "/088da866-a385-4de1-a0c1-fe8c93d1621e"
-					(reference "Rg")
+					(reference "Rg1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 182.88 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56de42f9-26db-43e8-9a37-22b81197bdcc")
+		(property "Reference" "TP2"
+			(at 185.42 46.2279 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 185.42 48.7679 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Bridge_Pitch5.08mm_Drill0.7mm"
+			(at 187.96 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 187.96 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 182.88 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9f7350c6-5877-4707-8af7-7fdd56ccf5fa")
+		)
+		(instances
+			(project ""
+				(path "/088da866-a385-4de1-a0c1-fe8c93d1621e"
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -1755,7 +1996,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Axial_L29.0mm_D10.0mm_P35.00mm_Horizontal"
 			(at 112.7252 104.14 0)
 			(effects
 				(font
@@ -1798,6 +2039,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 182.88 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9238cb1f-9b90-4f77-9290-09ea0b424c61")
+		(property "Reference" "TP1"
+			(at 185.42 34.7979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 185.42 37.3379 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Bridge_Pitch5.08mm_Drill0.7mm"
+			(at 187.96 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 187.96 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 182.88 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2d8d2130-880c-479c-95f7-2887ab60244d")
+		)
+		(instances
+			(project ""
+				(path "/088da866-a385-4de1-a0c1-fe8c93d1621e"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Operational:LM358")
 		(at 118.11 82.55 0)
 		(unit 2)
@@ -1823,7 +2131,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:CERDIP-8_W7.62mm_SideBrazed"
 			(at 118.11 82.55 0)
 			(effects
 				(font
@@ -1884,6 +2192,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 184.15 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b2b9a470-a204-4c73-827e-9a78c6df91ae")
+		(property "Reference" "TP5"
+			(at 186.69 114.8079 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 186.69 117.3479 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Bridge_Pitch5.08mm_Drill0.7mm"
+			(at 189.23 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 189.23 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 184.15 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7a23bb8b-ef16-4a13-962e-e7b6ebee6d89")
+		)
+		(instances
+			(project ""
+				(path "/088da866-a385-4de1-a0c1-fe8c93d1621e"
+					(reference "TP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Voltmeter_DC")
 		(at 168.91 90.17 0)
 		(unit 1)
@@ -1911,7 +2286,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Bridge_Pitch5.08mm_Drill0.7mm"
 			(at 168.91 87.63 90)
 			(effects
 				(font
@@ -1954,6 +2329,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 54.61 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c65e0589-e423-4d23-9c2f-14925db88b52")
+		(property "Reference" "TP3"
+			(at 57.15 34.7979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 57.15 37.3379 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Bridge_Pitch5.08mm_Drill0.7mm"
+			(at 59.69 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 54.61 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b57da751-4e11-4c61-bfca-b5967528b5ba")
+		)
+		(instances
+			(project ""
+				(path "/088da866-a385-4de1-a0c1-fe8c93d1621e"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Operational:LM358")
 		(at 128.27 99.06 0)
 		(unit 3)
@@ -1981,7 +2423,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:CERDIP-8_W7.62mm_SideBrazed"
 			(at 128.27 99.06 0)
 			(effects
 				(font
@@ -2051,7 +2493,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "df3148f2-0114-4260-ad17-43d6b900f7e1")
-		(property "Reference" "Rf"
+		(property "Reference" "Rf1"
 			(at 146.05 54.61 90)
 			(effects
 				(font
@@ -2059,7 +2501,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10 kohm"
 			(at 146.05 57.15 90)
 			(effects
 				(font
@@ -2067,7 +2509,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0614_L14.3mm_D5.7mm_P15.24mm_Horizontal"
 			(at 146.05 59.182 90)
 			(effects
 				(font
@@ -2103,7 +2545,7 @@
 		(instances
 			(project ""
 				(path "/088da866-a385-4de1-a0c1-fe8c93d1621e"
-					(reference "Rf")
+					(reference "Rf1")
 					(unit 1)
 				)
 			)

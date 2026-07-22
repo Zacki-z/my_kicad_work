@@ -1,0 +1,48 @@
+* Qucs 26.1.1  /home/alain/QucsWorkspace/qucs-labb_prj/el84-basic-dc-1.0.sch
+.INCLUDE "/usr/share/qucs-s/xspice_cmlib/include/ngspice_mathfunc.inc"
+.INCLUDE "/usr/share/qucs-s/library/TubesExtended/tube.lib"
+
+.SUBCKT TubesExtended_6BQ5  gnd _net0 _net1 _net2 _net3 
+XX1  _net0 _net1 _net2 _net3 6BQ5 
+.ENDS
+  
+
+.SUBCKT Transformers_TransformerPS1S2  gnd nPplus nPneg nSplus nSneg nSPct L1=0.5 L2=0.125 L3=0.125 K12=0.99 K13=0.99 K23=0.99 Rp=2 Rs1=1 Rs2=1 
+L1 nP1  nPneg {L1}
+L2 nSPplus  nSPct {L2}
+L3 nSPct  nSPneg {L3}
+R1 nPplus nP1  {RP}
+K13 L1 L3 {K13} 
+K12 L1 L2 {K12} 
+K23 L2 L3 {K23} 
+R2 nSneg nSPneg  {RS2}
+R3 nSPplus nSplus  {RS1}
+.ENDS
+  
+
+.SUBCKT RC_C_ESR  gnd _net0 _net1 Cs=10u Rs=1 
+R1 _net2 _net1  {RS} tc1=0.0 tc2=0.0 
+C1 _net0 _net2  {CS} 
+.ENDS
+  
+XSUB1 0 Anod _net0 _net1 _net2 TubesExtended_6BQ5
+R4 0 out  8 tc1=0.0 tc2=0.0 
+XTRAN1 0 HT Anod out _net3 0 Transformers_TransformerPS1S2 L1=40 L2=64M L3=32M K12=0.9999 K13=0.9999 K23=0.9999 Rp=300OHM Rs1=1 Rs2=1
+R6 _net1 _net4  100K tc1=0.0 tc2=0.0 
+C1 in _net4  1N 
+V5 _net5  0 250
+R7 0 _net1  270KOHM tc1=0.0 tc2=0.0 
+R5 0 _net2  270 tc1=0.0 tc2=0.0 
+XX2 0 _net2 0 RC_C_ESR Cs=470U Rs=1
+V6 in  0 0
+
+.control
+
+op
+print v(Anod) v(HT) v(in) v(out)   > spice4qucs.dc1.ngspice.dc.print
+destroy all
+reset
+
+exit
+.endc
+.END

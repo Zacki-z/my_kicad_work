@@ -1,0 +1,19 @@
+* Qucs 26.1.1  /home/alain/QucsWorkspace/qucs-labb_prj/labb-1.sch
+.INCLUDE "/usr/share/qucs-s/xspice_cmlib/include/ngspice_mathfunc.inc"
+R1 _net0 _net1  10K tc1=0.0 tc2=0.0 
+R2 0 _net0  10K tc1=0.0 tc2=0.0 
+V1 _net1  0 10
+EPr1 Pr1 0 _net0 0 1.0
+RPr1Pr1 Pr1 0 1E8
+RPr1_net0 _net0 0 1E8
+
+.control
+
+op
+print v(Pr1)   > spice4qucs.dc1.ngspice.dc.print
+destroy all
+reset
+
+exit
+.endc
+.END

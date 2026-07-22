@@ -1,0 +1,108 @@
+* ============================================================
+* LR4 aktiv crossover, 80 Hz - v5 RATTAD
+* ============================================================
+* RATTELSE mot tidigare: HP hade RQ/Rgnd omvant.
+*   Sallen-Key HP: Q = 0.5*sqrt(Rgnd/RQ), kravs Rgnd = 2*RQ
+*   RQ (mellannod->utgang) = 14k
+*   Rgnd (+ingang->gnd)    = 28k
+* LP oforandrad (var redan korrekt).
+* ============================================================
+* Foervaentade varden (beraeknat):
+*   hp_at80  = -6.10 dB
+*   lp_at80  = -5.08 dB
+*   sum_at40 = +0.36 dB
+*   sum_at80 = +0.44 dB
+*   sum_at160= +0.02 dB
+* ============================================================
+
+* Op-amp: bekraeftad fungerande foeljarmodell (foeljartest gav 0 dB)
+.subckt opamp plus minus out
+Ediff  vdiff  0    plus  minus  1
+Eamp   vamp   0    vdiff 0      1e5
+Rbuf   vamp   out  1
+Cout   out    0    1pF
+.ends opamp
+
+Vin  in  0  DC 0  AC 1
+
+* ---- Ingangsbouffert ----
+R1   in    chin  1k
+R2   chin  0     100k
+Xbuf chin  buf   buf   opamp
+
+* ============================================================
+* HOEGPASS - 2x Sallen-Key  (RATTADE varden)
+* C1=C2=100nF, RQ(mellannod->ut)=14k, Rgnd(+in->gnd)=28k
+* ============================================================
+
+* HP sektion 1 (U2A)
+C1   buf    n_h1a  100nF
+C2   n_h1a  n_h1p  100nF
+R11  n_h1p  0      28k
+R3   n_h1a  hp_s1  14k
+Xhp1 n_h1p  hp_s1  hp_s1  opamp
+
+* HP sektion 2 (U2B)
+C3   hp_s1  n_h2a  100nF
+C4   n_h2a  n_h2p  100nF
+R12  n_h2p  0      28k
+R6   n_h2a  hp_s2  14k
+Xhp2 n_h2p  hp_s2  hp_s2  opamp
+
+* HP utgangsbouffert (U3A)
+Xhpo hp_s2  hp_out hp_out  opamp
+
+* ============================================================
+* LAEGPASS - 2x Sallen-Key  (oforandrad, korrekt)
+* R=19.6k, CQ(mellannod->ut)=150nF, Cgnd(+in->gnd)=68nF
+* ============================================================
+
+* LP sektion 1 (U4B)
+R13  buf    n_l1a  19.6k
+R14  n_l1a  n_l1p  19.6k
+C6   n_l1p  0      68nF
+C5   n_l1a  lp_s1  150nF
+Xlp1 n_l1p  lp_s1  lp_s1  opamp
+
+* LP sektion 2 (U4A)
+R19  lp_s1  n_l2a  19.6k
+R20  n_l2a  n_l2p  19.6k
+C8   n_l2p  0      68nF
+C7   n_l2a  lp_s2  150nF
+Xlp2 n_l2p  lp_s2  lp_s2  opamp
+
+* LP utgangsbouffert (U3B)
+Xlpo lp_s2  lp_out lp_out  opamp
+
+* ============================================================
+* Summering HP + LP
+* ============================================================
+Esum1  n_sum1  0      hp_out  0  1.0
+Esum2  sum     n_sum1 lp_out  0  1.0
+
+* ============================================================
+.control
+  ac dec 200 10 2000
+
+  let hp_db  = vdb(hp_out)
+  let lp_db  = vdb(lp_out)
+  let sum_db = vdb(sum)
+
+  plot hp_db lp_db sum_db
++   ylimit -45 5
++   title 'LR4 80Hz RATTAD - HP, LP, Summa'
++   xlabel 'Frekvens [Hz]'
++   ylabel 'Amplitud [dB]'
+
+  echo "=== Kontrollvarden ==="
+  meas ac hp_at80    find hp_db   at=80
+  meas ac lp_at80    find lp_db   at=80
+  meas ac sum_at40   find sum_db  at=40
+  meas ac sum_at80   find sum_db  at=80
+  meas ac sum_at160  find sum_db  at=160
+  echo ""
+  echo "Foervaenat: hp_at80=-6.1, lp_at80=-5.1, sum_at80=+0.44 dB"
+
+.endc
+
+.end

@@ -1933,6 +1933,16 @@
 		)
 		(uuid "142f7f5a-6172-4da2-95c1-7b86289593d3")
 	)
+	(text "node ut"
+		(exclude_from_sim no)
+		(at 58.928 55.372 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "20b515a3-f969-4354-9e91-bfc702a31db9")
+	)
 	(text "GATE RAW"
 		(exclude_from_sim no)
 		(at 128.27 61.722 0)
@@ -2028,7 +2038,7 @@
 		(uuid "2e951efe-e75c-49ee-978f-3971d3f9831a")
 	)
 	(junction
-		(at 241.3 80.01)
+		(at 231.14 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "396c8296-8c09-47de-9f66-20a4bcb816fa")
@@ -2094,7 +2104,7 @@
 		(uuid "c97c6ec0-270b-4270-b038-673087282eb4")
 	)
 	(junction
-		(at 241.3 46.99)
+		(at 231.14 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d115d507-332e-48a2-bae5-d73999f0acab")
@@ -2269,13 +2279,13 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 46.99) (xy 245.11 46.99)
+			(xy 243.84 46.99) (xy 245.11 46.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1a3464ad-a353-4d68-b461-0ae31962227d")
+		(uuid "186bbdd8-a2dd-494c-8ce0-01fb6e15a1b4")
 	)
 	(wire
 		(pts
@@ -2419,6 +2429,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 46.99) (xy 236.22 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "379ed51a-69e8-4f12-9fdd-fdd9b852579b")
+	)
+	(wire
+		(pts
 			(xy 54.61 45.72) (xy 54.61 27.94)
 		)
 		(stroke
@@ -2499,16 +2519,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 46.99) (xy 241.3 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6020ec22-bc92-489f-a67b-4e76932ddd9f")
-	)
-	(wire
-		(pts
 			(xy 64.77 101.6) (xy 69.85 101.6)
 		)
 		(stroke
@@ -2529,7 +2539,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 80.01) (xy 250.19 80.01)
+			(xy 231.14 80.01) (xy 250.19 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2659,7 +2669,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 68.58) (xy 241.3 80.01)
+			(xy 231.14 68.58) (xy 231.14 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2679,7 +2689,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 60.96) (xy 241.3 46.99)
+			(xy 231.14 60.96) (xy 231.14 46.99)
 		)
 		(stroke
 			(width 0)
@@ -2789,7 +2799,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 80.01) (xy 241.3 80.01)
+			(xy 217.17 80.01) (xy 231.14 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2839,7 +2849,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 46.99) (xy 232.41 46.99)
+			(xy 227.33 46.99) (xy 231.14 46.99)
 		)
 		(stroke
 			(width 0)
@@ -2856,74 +2866,6 @@
 			(type default)
 		)
 		(uuid "ffd30e68-2ab9-40a2-8fe9-1c5cce6ce76a")
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 236.22 46.99 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "260f936b-2602-4486-9c32-aead6e39303b")
-		(property "Reference" "Rstop"
-			(at 236.22 40.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R"
-			(at 236.22 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 236.22 45.212 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 236.22 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 236.22 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fd7cf55f-b9b4-48ab-b74c-31c51517c1ed")
-		)
-		(pin "2"
-			(uuid "8ce377c1-d6ec-46d4-b519-dfb7d0c833a9")
-		)
-		(instances
-			(project "PSEEL84-chokeload"
-				(path "/32ca6d0c-12de-40f2-b65a-e4298ae46a02"
-					(reference "Rstop")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "power:VCC")
@@ -3700,7 +3642,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "zero"
 			(at 262.89 85.09 0)
 			(effects
 				(font
@@ -3948,6 +3890,74 @@
 			(project "PSEEL84-chokeload"
 				(path "/32ca6d0c-12de-40f2-b65a-e4298ae46a02"
 					(reference "Rstop")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 240.03 46.99 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a5d47cc9-2f62-4956-9977-faeb284d69d1")
+		(property "Reference" "Rstop1"
+			(at 240.03 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 240.03 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 240.03 45.212 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 240.03 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 240.03 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e387f1a4-291a-4ecb-aed0-c5357f6ed381")
+		)
+		(pin "2"
+			(uuid "8334313c-8093-456a-8495-dddd9682d602")
+		)
+		(instances
+			(project "PSEEL84-chokeload"
+				(path "/32ca6d0c-12de-40f2-b65a-e4298ae46a02"
+					(reference "Rstop1")
 					(unit 1)
 				)
 			)
@@ -4237,7 +4247,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ccfc4c05-f2c7-4ebb-83cc-67ec74e2bd51")
 		(property "Reference" "U2"
 			(at 259.08 45.7199 0)
@@ -4250,13 +4259,12 @@
 			)
 		)
 		(property "Value" "ECC88"
-			(at 259.08 48.2599 0)
+			(at 259.588 44.196 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Valve:Valve_Noval_P"
@@ -4321,7 +4329,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 241.3 64.77 0)
+		(at 231.14 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4330,7 +4338,7 @@
 		(fields_autoplaced yes)
 		(uuid "ce5d6115-054a-4720-bbf8-cded13d34c96")
 		(property "Reference" "Rgrid"
-			(at 243.84 63.4999 0)
+			(at 233.68 63.4999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4339,7 +4347,7 @@
 			)
 		)
 		(property "Value" "R"
-			(at 243.84 66.0399 0)
+			(at 233.68 66.0399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4348,7 +4356,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 239.522 64.77 90)
+			(at 229.362 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4357,7 +4365,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 241.3 64.77 0)
+			(at 231.14 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4366,7 +4374,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 241.3 64.77 0)
+			(at 231.14 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4465,7 +4473,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d9969a21-fd14-4662-9c79-3babf157c2de")
 		(property "Reference" "#PWR02"
 			(at 64.77 107.95 0)
@@ -4476,12 +4483,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 64.77 106.68 0)
+		(property "Value" "Zero return"
+			(at 61.722 106.172 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -4856,28 +4864,28 @@
 			)
 		)
 		(pin "4"
-			(uuid "36c55cc4-0b18-4c26-834d-d747a4668b06")
+			(uuid "36c55cc4-0b18-4c26-834d-d747a4668b07")
 		)
 		(pin "7"
-			(uuid "91c1f02c-ac07-47f6-9398-6847c36de3bb")
+			(uuid "91c1f02c-ac07-47f6-9398-6847c36de3bc")
 		)
 		(pin "3"
 			(uuid "a6de3c03-b6b2-45ee-ab71-6eed86c6180b")
 		)
 		(pin "5"
-			(uuid "787b564f-be67-44ce-8e50-2a312db7c92c")
+			(uuid "787b564f-be67-44ce-8e50-2a312db7c92d")
 		)
 		(pin "1"
 			(uuid "e1816755-f1be-4371-aef6-5fbe1bd0e610")
 		)
 		(pin "8"
-			(uuid "bd9ff5c5-d588-42d2-9309-ae22c6495fa9")
+			(uuid "bd9ff5c5-d588-42d2-9309-ae22c6495faa")
 		)
 		(pin "2"
 			(uuid "2bcd2b1b-bd9e-455f-ad8b-cee775d02da3")
 		)
 		(pin "6"
-			(uuid "f7278543-bd37-47ec-829d-7f83cba17615")
+			(uuid "f7278543-bd37-47ec-829d-7f83cba17616")
 		)
 		(instances
 			(project ""

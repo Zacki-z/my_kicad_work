@@ -1,0 +1,24 @@
+.title KiCad schematic
+.include "/usr/share/kicad/symbols/Simulation_SPICE.sp"
+.save all
+.probe p(XU1)
+.probe p(C3)
+.probe p(C4)
+.probe p(C1)
+.probe p(C5)
+.probe p(V4)
+.probe p(C2)
+.probe p(V2)
+.probe p(V1)
+.tran 10n 50u 0 1n
+XU1 /in /out /12_V+ Net-_U1-V-_ /out kicad_builtin_opamp
+C3 /12_V+ 0 10u
+C4 0 Net-_U1-V-_ 10u
+C1 /12_V+ 0 100n
+C5 /out 0 50n
+V4 /in 0 PULSE( 0 1 0 10n 10n 5u 10u ) 
+C2 Net-_U1-V-_ 0 100n
+V2 Net-_U1-V-_ 0 DC -12 
+V1 /12_V+ 0 DC 12 
+.end
+

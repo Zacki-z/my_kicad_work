@@ -1,0 +1,57 @@
+* Differentialförstärkare med BC547
+* ±12V matning, Re=10k, Rc=4.7k
+
+* --- BC547 modell (standard) ---
+.model BC547 NPN(IS=1e-14 BF=200 VAF=100 IKF=0.1
++ RB=100 RC=10 RE=1 CJC=4p CJE=8p TF=0.3n TR=30n)
+
+* --- Matning ---
+VCC vcc 0 DC 12
+VEE 0 vee DC 12
+
+* --- Transistorer ---
+* Q <collector> <base> <emitter> <model>
+Q1 c1 b1 e  BC547
+Q2 c2 b2 e  BC547
+
+* --- Motstånd ---
+RC1 vcc c1 4700
+RC2 vcc c2 4700
+RE  e vee  10000
+
+* --- Ingångskällor ---
+* Byt mellan DIFF och CM-analys genom att kommentera/avkommentera
+
+* DIFFERENTIAL: V1=+signal, V2=-signal (push-pull)
+Vin1 b1 0 DC 0 AC 0.5
+Vin2 b2 0 DC 0 AC -0.5
+
+* COMMON MODE: kommentera bort raderna ovan och avkommentera dessa:
+*Vin1 b1 0 DC 0 AC 1
+*Vin2 b2 0 DC 0 AC 1
+
+* --- Analyser ---
+
+* 1) DC-arbetspunkt
+.op
+
+* 2) AC-analys (differential eller CM beroende på källorna ovan)
+.ac dec 100 10 10Meg
+
+* --- Mätpunkter ---
+.measure ac Vout_diff find vdb(c1,c2) at=1k
+.measure ac Vout_c1   find vdb(c1)   at=1k
+.measure ac Vout_c2   find vdb(c2)   at=1k
+
+.control
+run
+
+* Skriv ut DC-arbetspunkt
+print v(c1) v(c2) v(e) i(RC1) i(RC2)
+
+* Plotta AC-svar
+plot vdb(c1) vdb(c2) vdb(c1,c2)
+
+.endc
+
+.end

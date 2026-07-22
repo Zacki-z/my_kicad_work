@@ -1,0 +1,22 @@
+* Qucs 26.1.1  /home/alain/QucsWorkspace/qucs-labb_prj/labb-2.sch
+.INCLUDE "/usr/share/qucs-s/xspice_cmlib/include/ngspice_mathfunc.inc"
+R1 _net0 _net1  1K tc1=0.0 tc2=0.0 
+C1 0 _net1  100N 
+V1 _net0 0 DC 0 SIN(0 1 1K 0 0 0) AC 1 ACPHASE 0
+EPr1 Pr1 0 _net1 0 1.0
+RPr1Pr1 Pr1 0 1E8
+RPr1_net1 _net1 0 1E8
+EPr2 Pr2 0 _net0 0 1.0
+RPr2Pr2 Pr2 0 1E8
+RPr2_net0 _net0 0 1E8
+
+.control
+
+ac dec 15 10 50000k 
+write spice4qucs.ac1.plot v(Pr1) v(Pr2)
+destroy all
+reset
+
+exit
+.endc
+.END

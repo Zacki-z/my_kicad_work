@@ -1,0 +1,103 @@
+Fel: Uppdatera symbol C46 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C47 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C37 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C25 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C44 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C5 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C15 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C4 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C21 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C8 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C17 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C1 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C9 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C36 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C32 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Fel: Uppdatera symbol C28 från 'PCM_Capacitor_AKL:CP_Generic' till 'PCM_Capacitor_AKL:CP_Generic': *** symbol hittades inte ***
+Uppdatera symbol R23 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol U8 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol U8 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol C45 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C48 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C34 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C31 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol U5 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R20 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol R15 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol R21 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol J3 från 'Connector:Conn_01x02_Socket' till 'Connector:Conn_01x02_Socket': OK
+Uppdatera symbol J5 från 'Connector:Conn_01x02_Socket' till 'Connector:Conn_01x02_Socket': OK
+Uppdatera symbol J2 från 'Connector:Conn_01x02_Socket' till 'Connector:Conn_01x02_Socket': OK
+Uppdatera symbol J1 från 'Connector:Conn_01x03_Socket' till 'Connector:Conn_01x03_Socket': OK
+Uppdatera symbol U2 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol C18 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C6 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C30 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C43 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C23 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol R10 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol U6 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R2 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol C20 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C7 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol U3 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol U4 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol C22 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C16 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol R11 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol U7 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol U5 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R22 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol U5 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol C41 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol R12 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol C29 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C40 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol R19 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol U7 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R13 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol R8 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol C12 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C2 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol U1 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol U2 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R3 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol U1 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol C24 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C11 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol #FLG02 från 'power:PWR_FLAG' till 'power:PWR_FLAG': OK
+Uppdatera symbol C3 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol R5 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol U4 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R6 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol C13 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol U3 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R4 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol C14 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol U4 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol U3 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol U2 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol C19 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol R1 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol #FLG01 från 'power:PWR_FLAG' till 'power:PWR_FLAG': OK
+Uppdatera symbol R7 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol R9 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol C10 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol J6 från 'Connector:Conn_01x02_Socket' till 'Connector:Conn_01x02_Socket': OK
+Uppdatera symbol J4 från 'Connector:Conn_01x02_Socket' till 'Connector:Conn_01x02_Socket': OK
+Uppdatera symbol C38 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C42 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C33 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol R14 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol U7 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R16 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol C27 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol U6 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol U1 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol C35 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol C39 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol U6 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R18 från 'Device:R' till 'Device:R': OK
+Uppdatera symbol C26 från 'Device:C' till 'Device:C': OK
+Uppdatera symbol U8 från 'Amplifier_Operational:OPA1656ID' till 'Amplifier_Operational:OPA1656ID': OK
+Uppdatera symbol R17 från 'Device:R' till 'Device:R': OK

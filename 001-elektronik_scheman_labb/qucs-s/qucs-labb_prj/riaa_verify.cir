@@ -1,0 +1,73 @@
+* RIAA split-EQ verifiering (OPA1612-topologi, ideala op-ampar)
+* Steg1 = aktiv 3180/318 us, passiv 75 us, U1B platt makeup-gain.
+* Korrekt EQ  ->  (krets - ideal RIAA) blir en vagrat linje.
+
+*-------------------- KALLA --------------------
+V1   in  0   AC 1
+R1   in  0   47k
+C1   in  0   330p
+
+*-------------------- U1A: aktiv 3180/318 us --------------------
+X1   in  na  nout1  opamp
+R10  na  0   1.07k
+R4   na  nb  9.65k
+R3   nb  nout1 96.5k
+C2   nb  nout1 33n
+
+*-------------------- Passiv 75 us --------------------
+R11  nout1 nc  7.5k
+C5   nc  0   10n
+R5   nc  0   2.2meg
+
+*-------------------- U1B: platt makeup-gain --------------------
+X2   nc  nd  nout2 opamp
+R6   nd  0   2k
+R7   nd  nout2 42.2k
+
+*-------------------- Utgang --------------------
+C6   nout2 out 2.2u
+RL   out 0   47k
+
+*-------------------- Ideal op-amp (gain 1e6, Zut=0) --------------------
+* Byt mot OPA1612-subckt har om du vill kontrollera modellpaverkan.
+.subckt opamp inp inn out
+E1 out 0 inp inn 1e6
+.ends opamp
+
+.control
+ac dec 400 2 200k
+
+* kretsens utgang (fore C6)
+let vmag = abs(v(nout2))
+
+* ideal RIAA-amplitud ur tidskonstanterna
+let w   = 2*pi*frequency
+let t1  = 3180e-6
+let t2  = 318e-6
+let t3  = 75e-6
+let wt1 = w*t1
+let wt2 = w*t2
+let wt3 = w*t3
+let riaa = sqrt((1 + wt2*wt2)/((1 + wt1*wt1)*(1 + wt3*wt3)))
+
+* PRIMART TEST: krets minus ideal RIAA. Korrekt = vagrat linje.
+let err = 20*log10(vmag) - 20*log10(riaa)
+plot err xlabel "Frekvens [Hz]" ylabel "Krets - ideal RIAA [dB]"
+
+* absolut forstarkning
+plot 20*log10(vmag) xlabel "Frekvens [Hz]" ylabel "Forstarkning [dB]"
+
+* normaliserad avvikelse, 0 dB @ 1 kHz
+meas ac g1k find vmag at=1000
+meas ac r1k find riaa at=1000
+let dev = 20*log10(vmag/g1k) - 20*log10(riaa/r1k)
+plot dev xlabel "Frekvens [Hz]" ylabel "RIAA-avvikelse [dB]"
+
+* numerisk avlasning vid nyckelfrekvenser
+meas ac d20  find dev at=20
+meas ac d100 find dev at=100
+meas ac d1k  find dev at=1000
+meas ac d10k find dev at=10000
+meas ac d20k find dev at=20000
+.endc
+.end

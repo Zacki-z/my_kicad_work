@@ -1,0 +1,31 @@
+* Minimalt testfall: EN Sallen-Key HP-sektion
+* Foervaenat: -3 dB vid 80 Hz (en 2:a ordningens sektion)
+* Om HP vid 80 Hz = -3 dB: Sallen-Key fungerar korrekt
+* Om HP vid 80 Hz << -3 dB: Q-återkopplingen fungerar ej
+
+.subckt opamp plus minus out
+Rin  plus minus 1G
+Eamp int1 0 plus minus 1e5
+Rp   int1 out 1
+Cp   out  0   15.9nF
+.ends opamp
+
+Vin in 0 DC 0 AC 1
+
+* Sallen-Key HP, en sektion
+* C1=C2=100nF, R(gnd)=14k, R(Q)=28k till op-amp-utgång
+C1  in   n1   100nF
+C2  n1   np   100nF
+R11 np   0    14k
+R3  n1   out  28k
+Xop np   out  out  opamp
+
+.control
+  ac dec 200 10 2000
+  plot vdb(out) ylimit -30 5 title 'SK HP2 - ska vara -3dB vid 80Hz'
+  meas ac result find vdb(out) at=80
+  echo "Foervaenat: ca -3 dB vid 80 Hz"
+  echo "Om uppmaetat aer << -3 dB fungerar ej Q-aaterkopplingen"
+.endc
+
+.end

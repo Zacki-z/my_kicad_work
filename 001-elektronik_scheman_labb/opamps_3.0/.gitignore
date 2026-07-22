@@ -1,0 +1,54 @@
+# KiCad backups / temp
+*-backups/
+*.bak
+*.tmp
+*.autosave
+fp-info-cache
+# Gerber/build/export-mappar
+gerbers/
+Gerbers/
+fabrication/
+plot/
+plots/
+bom/
+*.zip
+# OS/editor
+.DS_Store
+Thumbs.db
+
+# KiCad backups / temp
+*-backups/
+*.bak
+*.tmp
+*.autosave
+fp-info-cache
+*.lck
+
+# Gerber/build/export-mappar
+gerbers/
+Gerbers/
+fabrication/
+plot/
+plots/
+bom/
+*.zip
+
+# Drill / fabrication exports
+*.gbr
+*.drl
+*.gerber
+*.map
+
+# 3D/export
+step/
+*.step
+*.stp
+
+# OS/editor
+.DS_Store
+Thumbs.db
+
+# Python/cache
+__pycache__/
+.history/
+**/.history/

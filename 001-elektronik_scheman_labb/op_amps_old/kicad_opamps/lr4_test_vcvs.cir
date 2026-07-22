@@ -1,0 +1,22 @@
+* Test: SK HP med direkt VCVS (ingen subkrets)
+* Eop kopplas direkt: plus=np, minus=out, out=out
+* Foervaenat: -3 dB vid 80 Hz
+
+Vin in 0 DC 0 AC 1
+
+C1  in   n1   100nF
+C2  n1   np   100nF
+R11 np   0    14k
+R3  n1   out  28k
+
+* Op-amp direkt som VCVS: Vout = A*(V(np) - V(out))
+* => enhetsfoeljare: out foeljer np
+Eop out 0 np out 1e5
+
+.control
+  ac dec 200 10 2000
+  meas ac res find vdb(out) at=80
+  echo "Foervaenat: -3 dB"
+.endc
+
+.end

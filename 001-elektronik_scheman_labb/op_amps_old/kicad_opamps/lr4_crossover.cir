@@ -1,0 +1,103 @@
+* ============================================================
+* LR4 aktiv crossover, 80 Hz - verifiering
+* Sallen-Key, enhetsforstarkning, OPA1656 (modellerad som ideal)
+* En kanal. HP -> satelliter, LP -> subwoofer.
+* ============================================================
+* Kor med:  ngspice lr4_crossover.cir
+* Plottas automatiskt via .control-blocket langst ner.
+* ============================================================
+
+* ---- Insignal: AC 1V for frekvenssvar ----
+Vin  in  0  DC 0  AC 1
+
+* ============================================================
+* Ideal op-amp som subkrets (VCVS med hog forstarkning)
+* Pinnar: + - ut
+* ============================================================
+.subckt opamp plus minus out
+Eop out 0 plus minus 1e6
+.ends opamp
+
+* ---- Ingangsbuffert U1A (enhetsforstarkning foljare) ----
+* R1 1k serie, R2 100k till gnd
+R1  in   n_chin  1k
+R2  n_chin 0      100k
+Xbuf n_chin  buf  buf  opamp
+
+* ============================================================
+* HOGPASS - tva kaskadkopplade Sallen-Key sektioner
+* C serie, R(gnd)=14k, R(Q till utgang)=28k
+* ============================================================
+* --- HP sektion 1 (U2A) ---
+C1   buf    hp1a   100nF
+C2   hp1a   hp1p   100nF
+R11  hp1p   0      14k
+R3   hp1a   hp_s1  28k        ; Q-aterkoppling till utgang
+Xhp1 hp1p   hp_s1  hp_s1  opamp
+
+* --- HP sektion 2 (U2B) ---
+C3   hp_s1  hp2a   100nF
+C4   hp2a   hp2p   100nF
+R12  hp2p   0      14k
+R6   hp2a   hp_s2  28k        ; Q-aterkoppling till utgang
+Xhp2 hp2p   hp_s2  hp_s2  opamp
+
+* --- HP utgangsbuffert (U3A) ---
+Xhpo hp_s2  hp_out hp_out opamp
+
+* ============================================================
+* LAGPASS - tva kaskadkopplade Sallen-Key sektioner
+* R serie=19.6k, C(gnd)=68nF, C(Q till utgang)=150nF
+* ============================================================
+* --- LP sektion 1 (U4B) ---
+R13  buf    lp1a   19.6k
+R14  lp1a   lp1p   19.6k
+C6   lp1p   0      68nF
+C5   lp1a   lp_s1  150nF      ; Q-aterkoppling till utgang
+Xlp1 lp1p   lp_s1  lp_s1  opamp
+
+* --- LP sektion 2 (U4A) ---
+R19  lp_s1  lp2a   19.6k
+R20  lp2a   lp2p   19.6k
+C8   lp2p   0      68nF
+C7   lp2a   lp_s2  150nF      ; Q-aterkoppling till utgang
+Xlp2 lp2p   lp_s2  lp_s2  opamp
+
+* --- LP utgangsbuffert (U3B) ---
+Xlpo lp_s2  lp_out lp_out opamp
+
+* ============================================================
+* Summering HP+LP for att kontrollera plan summering
+* (LR4 summerar med SAMMA polaritet -> ren addition)
+* Ideal summering via VCVS sa filtren inte belastas
+* ============================================================
+Bsum sum 0  V='V(hp_out)+V(lp_out)'
+
+* ============================================================
+* Analys
+* ============================================================
+.control
+  ac dec 200 1 2000
+
+  * Frekvenssvar HP, LP och summa i dB
+  let hp_db  = db(v(hp_out))
+  let lp_db  = db(v(lp_out))
+  let sum_db = db(v(sum))
+
+  plot hp_db lp_db sum_db ylimit -40 5 xlog
++       title 'LR4 80 Hz: HP (satelliter), LP (sub), Summa'
++       xlabel 'Frekvens [Hz]'  ylabel 'Amplitud [dB]'
+
+  * Skriv ut nyckelvarden vid brytfrekvensen
+  echo ""
+  echo "=== Kontrollpunkter ==="
+  meas ac hp80  find hp_db  at=80
+  meas ac lp80  find lp_db  at=80
+  meas ac sum80 find sum_db at=80
+  meas ac sum40 find sum_db at=40
+  meas ac sum160 find sum_db at=160
+  echo ""
+  echo "Forvantat: HP och LP ca -6 dB vid 80 Hz, summa ~0 dB (liten puckel +0.4 dB)"
+.endc
+
+.end

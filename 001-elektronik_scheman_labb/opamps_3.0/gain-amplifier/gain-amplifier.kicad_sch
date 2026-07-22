@@ -1,0 +1,56 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "345fc277-4ee0-4f68-939b-78c9b6d16207")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 73.66 58.42)
+		(size 17.78 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "df3266ae-807d-4cbe-9b36-96ffc75f1171")
+		(property "Sheetname" "Untitled Sheet"
+			(at 73.66 57.7084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "testa.kicad_sch"
+			(at 73.66 72.9746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "gain-amplifier"
+				(path "/345fc277-4ee0-4f68-939b-78c9b6d16207"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

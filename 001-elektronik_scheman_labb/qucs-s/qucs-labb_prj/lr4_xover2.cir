@@ -1,0 +1,88 @@
+* Aktiv 2-vags LR4-delningsfilter (Sallen-Key, lika komponent), fc = 80 Hz
+* AC-verifiering: magnitud, fas OCH grupplaufzeit for hogpass, lagpass + summa.
+* Ideala op-forstarkare (byt mot OPA1656-subckt for verklig modell).
+* Kor interaktivt for plottar:   ngspice  ->  source lr4_xover.cir
+* Kor batch (bara meas-utskrift):  ngspice -b lr4_xover.cir
+
+.param Rf=5.9k Rg=10k          ; forstarkning = 1 + Rf/Rg = 1.59 -> Q ~ 0.707
+
+.subckt opamp vp vn out
+Eop out 0 vp vn 1e6
+.ends
+
+* ---- ingang + buffert U1A ----
+Vin   in 0 AC 1
+R1    in   bp1   1k
+R2    bp1  0     100k
+XU1A  bp1  vbuf  vbuf  opamp
+
+* =================== HOGPASS ===================
+C1    vbuf nA1  100n
+C2    nA1  nB1  100n
+R3    nA1  hp1  19.9k
+R11   nB1  0    19.9k
+R4    hp1  ni1  {Rf}
+R5    ni1  0    {Rg}
+XU2A  nB1  ni1  hp1  opamp
+C3    hp1  nA2  100n
+C4    nA2  nB2  100n
+R6    nA2  hp2  19.9k
+R12   nB2  0    19.9k
+R8    hp2  ni2  {Rf}
+R7    ni2  0    {Rg}
+XU2B  nB2  ni2  hp2  opamp
+R9    hp2  hpd  15k
+R10   hpd  0    10k
+XU3A  hpd  hpo  hpo  opamp
+
+* =================== LAGPASS ===================
+R13   vbuf nA3  19.9k
+R14   nA3  nB3  19.9k
+C5    nA3  lp1  100n
+C6    nB3  0    100n
+R16   lp1  ni3  {Rf}
+R15   ni3  0    {Rg}
+XU4B  nB3  ni3  lp1  opamp
+R19   lp1  nA4  19.9k
+R20   nA4  nB4  19.9k
+C7    nA4  lp2  100n
+C8    nB4  0    100n
+R18   lp2  ni4  {Rf}
+R17   ni4  0    {Rg}
+XU4A  nB4  ni4  lp2  opamp
+R21   lp2  lpd  15k
+R22   lpd  0    10k
+XU3B  lpd  lpo  lpo  opamp
+
+.control
+ac dec 400 1 100k
+
+* --- harledda storheter ---
+let sumv  = v(hpo)+v(lpo)
+let sdb   = db(sumv)
+let dphi  = vp(hpo)-vp(lpo)
+let gd_hp = -deriv(cph(v(hpo)))/(2*pi)
+let gd_lp = -deriv(cph(v(lpo)))/(2*pi)
+let gdhp_ms = gd_hp*1e3
+let gdlp_ms = gd_lp*1e3
+
+* --- matvarden ---
+meas ac fc_hp   WHEN vdb(hpo)=-6 RISE=1
+meas ac fc_lp   WHEN vdb(lpo)=-6 FALL=1
+meas ac sum_max MAX sdb FROM=20 TO=2000
+meas ac sum_min MIN sdb FROM=20 TO=2000
+meas ac dphi_max MAX dphi FROM=1 TO=100k
+meas ac dphi_min MIN dphi FROM=1 TO=100k
+meas ac gd_peak MAX gdlp_ms FROM=10 TO=500
+meas ac gd_at80 FIND gdlp_ms AT=80
+
+* --- plottar (interaktivt) ---
+plot vdb(hpo) vdb(lpo) sdb ylimit -40 5 xlog title 'Magnitud: HP, LP, summa'
+plot vp(hpo) vp(lpo) xlog title 'Fas (grader): HP och LP sammanfaller'
+plot dphi ylimit -10 10 xlog title 'Fasskillnad HP-LP (grader)'
+plot gdhp_ms gdlp_ms xlog title 'Grupplaufzeit (ms): HP och LP sammanfaller'
+
+* avkommentera for CSV-export:
+* wrdata lr4_resultat.csv vdb(hpo) vdb(lpo) sdb vp(hpo) vp(lpo) gdlp_ms
+.endc
+.end

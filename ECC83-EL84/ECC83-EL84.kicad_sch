@@ -2504,6 +2504,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "300 V"
+		(exclude_from_sim no)
+		(at 83.058 25.908 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a3593e9b-0049-46d7-89ba-2c4d5f14f401")
+	)
 	(junction
 		(at 186.69 120.65)
 		(diameter 0)

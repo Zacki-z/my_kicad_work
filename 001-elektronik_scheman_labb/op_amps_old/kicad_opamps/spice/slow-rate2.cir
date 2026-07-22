@@ -1,0 +1,25 @@
+.title KiCad schematic
+.include "/home/alain/Kicad_opamps/LM741_ngspice.lib"
+.save all
+.probe alli
+.probe p(C1)
+.probe p(C3)
+.probe p(C4)
+.probe p(C2)
+.probe p(V2)
+.probe p(V1)
+.probe p(V4)
+.probe p(XU3)
+.probe p(R2)
+.tran 100n 300u 0 20n
+C1 /12_V+ 0 100n
+C3 /12_V+ 0 10u
+C4 0 Net-_U3-V-_ 10u
+C2 Net-_U3-V-_ 0 100n
+V2 Net-_U3-V-_ 0 DC -15 
+V1 /12_V+ 0 DC 15 
+V4 /in 0 PULSE( 0 5 0 10n 10n 50u 100u ) 
+XU3 /in /U1-out /12_V+ Net-_U3-V-_ /U1-out LM741
+R2 /load_out 0 10k
+.end
+

@@ -1,0 +1,114 @@
+* ============================================================
+* LR4 aktiv crossover, 80 Hz - verifiering
+* Sallen-Key, enhetsfoerstaerkning, OPA1656 (modellerad)
+* Koer med:  ngspice lr4_crossover_v2.cir
+* ============================================================
+* Foervaentade resultat:
+*   HP och LP -6 dB vid 80 Hz
+*   Flanker -24 dB/oktav
+*   Summa HP+LP: +0.4 dB puckel vid 80 Hz (LP Q=0.743 ej exakt 0.707)
+*   Om puckeln stoer: para LP-kondensatorer till C(Q)=141nF, C(gnd)=71nF
+* ============================================================
+
+* ---- Op-amp modell med Laplace-pol vid 10 MHz ----
+* Loser det algebraiska slutna-loop-problemet som VCVS A=1e6 ger.
+* En pol vid 10 MHz paverkar inte filterkurvorna vid 20-2000 Hz.
+.subckt opamp_lp plus minus out
+Rin  plus minus 1G
+Eamp int1   0   plus minus 1e5
+* Rp=1 ohm => pol vid 1/(2*pi*1*15.9n)=10 MHz, noll utgangsimpedans praktiskt
+Rp   int1   out  1
+Cp   out    0    15.9nF
+.ends opamp_lp
+
+* ---- Insignal AC 1V ----
+Vin  in  0  DC 0  AC 1
+
+* ---- Ingangsbouffert U1A ----
+R1    in      n_chin   1k
+R2    n_chin  0        100k
+Xbuf  n_chin  buf  buf  opamp_lp
+
+* ============================================================
+* HOEGPASS - 2x Sallen-Key
+* C1=C2=100nF serie, R(gnd)=14k, R(Q till utgang)=28k
+* ============================================================
+
+* HP sektion 1 (U2A)
+C1   buf     hp1a    100nF
+C2   hp1a    hp1p    100nF
+R11  hp1p    0       14k
+R3   hp1a    hp_s1   28k
+Xhp1 hp1p    hp_s1   hp_s1   opamp_lp
+
+* HP sektion 2 (U2B)
+C3   hp_s1   hp2a    100nF
+C4   hp2a    hp2p    100nF
+R12  hp2p    0       14k
+R6   hp2a    hp_s2   28k
+Xhp2 hp2p    hp_s2   hp_s2   opamp_lp
+
+* HP utgangsbouffert (U3A)
+Xhpo hp_s2   hp_out  hp_out  opamp_lp
+
+* ============================================================
+* LAEGPASS - 2x Sallen-Key
+* R=19.6k serie, C(gnd)=68nF, C(Q till utgang)=150nF
+* ============================================================
+
+* LP sektion 1 (U4B)
+R13  buf     lp1a    19.6k
+R14  lp1a    lp1p    19.6k
+C6   lp1p    0       68nF
+C5   lp1a    lp_s1   150nF
+Xlp1 lp1p    lp_s1   lp_s1   opamp_lp
+
+* LP sektion 2 (U4A)
+R19  lp_s1   lp2a    19.6k
+R20  lp2a    lp2p    19.6k
+C8   lp2p    0       68nF
+C7   lp2a    lp_s2   150nF
+Xlp2 lp2p    lp_s2   lp_s2   opamp_lp
+
+* LP utgangsbouffert (U3B)
+Xlpo lp_s2   lp_out  lp_out  opamp_lp
+
+* ============================================================
+* Summering HP+LP
+* Anvander tvaa VCVS i serie (undviker B-source i aldre ngspice)
+* Esum1 kopierar hp_out, Esum2 adderar lp_out
+* ============================================================
+Esum1  sum_hp   0    hp_out  0   1.0
+Esum2  sum      sum_hp  lp_out  0   1.0
+
+* ============================================================
+* Analys och plot
+* ============================================================
+.control
+  ac dec 200 10 2000
+
+  let hp_db  = vdb(hp_out)
+  let lp_db  = vdb(lp_out)
+  let sum_db = vdb(sum)
+
+  plot hp_db lp_db sum_db
++   ylimit -45 5
++   title 'LR4 80Hz: bla=LP, rod=HP, gul=Summa'
++   xlabel 'Frekvens [Hz]'
++   ylabel 'Amplitud [dB]'
+
+  echo "=== Kontrollvarden ==="
+  meas ac hp_at80   find hp_db   at=80
+  meas ac lp_at80   find lp_db   at=80
+  meas ac sum_at40  find sum_db  at=40
+  meas ac sum_at80  find sum_db  at=80
+  meas ac sum_at160 find sum_db  at=160
+
+  echo ""
+  echo "Foervaenat: HP~-6dB, LP~-6dB vid 80Hz"
+  echo "Foervaenat: Summa +0.4 dB vid 80Hz (LP Q=0.743 ej exakt 0.707)"
+  echo "Foer exakt platt summering: byt LP C(Q) till 141nF och C(gnd) till 71nF"
+
+.endc
+
+.end
