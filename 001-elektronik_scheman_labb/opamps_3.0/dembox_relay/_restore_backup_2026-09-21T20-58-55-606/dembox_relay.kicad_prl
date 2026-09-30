@@ -63,7 +63,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "op-amp-test-02.kicad_prl",
+    "filename": "dembox_relay.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {
